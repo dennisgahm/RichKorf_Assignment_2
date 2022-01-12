@@ -7,7 +7,7 @@
     '6 7 8
     Public blankLocation As Integer
     Dim moveToGetHere As Move = Move.None
-    Dim childrenBoards As New List(Of _8Puzzle)
+    'Dim childrenBoards As New List(Of _8Puzzle)
     Public Enum Move
         Left = 0
         Up = 1
