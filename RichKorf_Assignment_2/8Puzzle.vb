@@ -5,9 +5,10 @@
     '0 1 2
     '3 4 5
     '6 7 8
-    Dim blankLocation As Integer
+    Public blankLocation As Integer
     Dim moveToGetHere As Move = Move.None
-    Enum Move
+    Dim childrenBoards As New List(Of _8Puzzle)
+    Public Enum Move
         Left = 0
         Up = 1
         Right = 2
@@ -18,6 +19,11 @@
     Public Sub New()
         'place blank at center of board
         blankLocation = 4
+    End Sub
+
+    'New board with parentBoard as board
+    Public Sub New(board As _8Puzzle)
+        blankLocation = board.blankLocation
     End Sub
 
     Public Function MoveBlank(move As Move) As Boolean
