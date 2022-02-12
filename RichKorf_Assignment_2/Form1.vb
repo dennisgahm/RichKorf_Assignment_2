@@ -9,7 +9,7 @@
         Dim boardsParents As New List(Of _8Puzzle) 'The boards for this depth - 1 (parents)
         boardsParents.Add(board)
         Dim boards As New List(Of _8Puzzle) 'The boards for this depth
-        For i As Integer = 0 To 9
+        For i As Integer = 0 To 29
             boards.Clear()
 
             For i3 As Integer = 0 To boardsParents.Count - 1

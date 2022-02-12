@@ -10,6 +10,18 @@
 - Depth 2 = 16 right now
 	It should be 8
 
+
+Depth 1: 4
+Depth 2: 8
+Depth 3: 8
+Depth 4: 16
+Depth 5: 32
+Depth 6: 64
+Depth 7: 80
+Depth 8: 160
+Depth 9: 272
+Depth 10: 544
+
 	
 
 Depth 1: 4

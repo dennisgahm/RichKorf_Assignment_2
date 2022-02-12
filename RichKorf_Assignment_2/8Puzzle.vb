@@ -73,26 +73,26 @@
         Select Case move
             Case Move.Left
                 Dim temp As Integer = blankLocation Mod 3
-                If temp <> 0 And () Then
+                If temp <> 0 And (previous_blank_location + 1 <> blankLocation) Then
                     Return True
                 Else
                     Return False
                 End If
             Case Move.Up
-                If blankLocation >= 3 Then
+                If blankLocation >= 3 And (previous_blank_location + 3 <> blankLocation) Then
                     Return True
                 Else
                     Return False
                 End If
             Case Move.Right
                 Dim temp As Integer = blankLocation Mod 3
-                If temp <> 2 Then
+                If temp <> 2 And (previous_blank_location - 1 <> blankLocation) Then
                     Return True
                 Else
                     Return False
                 End If
             Case Move.Down
-                If blankLocation < 6 Then
+                If blankLocation < 6 And (previous_blank_location - 3 <> blankLocation) Then
                     Return True
                 Else
                     Return False
