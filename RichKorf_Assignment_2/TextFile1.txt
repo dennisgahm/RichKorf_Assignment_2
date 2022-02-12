@@ -1,0 +1,37 @@
+﻿Notes to self:
+
+    '0-8
+
+    '0 1 2
+    '3 4 5
+    '6 7 8
+
+
+- Depth 2 = 16 right now
+	It should be 8
+
+	
+
+Depth 1: 4
+Depth 2: 12
+Depth 3: 40
+Depth 4: 140
+Depth 5: 480
+Depth 6: 1632
+Depth 7: 5540
+Depth 8: 18820
+Depth 9: 64012
+Depth 10: 217760
+
+
+    old:
+Depth 1: 4
+Depth 2: 16
+Depth 3: 64
+Depth 4: 256
+Depth 5: 1024
+Depth 6: 4096
+Depth 7: 16384
+Depth 8: 65536
+Depth 9: 262144
+Depth 10: 1048576

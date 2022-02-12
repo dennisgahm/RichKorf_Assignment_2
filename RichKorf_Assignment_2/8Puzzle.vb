@@ -6,7 +6,8 @@
     '3 4 5
     '6 7 8
     Public blankLocation As Integer
-    Dim moveToGetHere As Move = Move.None
+    'Dim moveToGetHere As Move = Move.None
+    Dim previous_blank_location As Integer
     'Dim childrenBoards As New List(Of _8Puzzle)
     Public Enum Move
         Left = 0
@@ -31,16 +32,16 @@
             Case Move.Left
                 Dim temp As Integer = blankLocation Mod 3
                 If temp <> 0 Then
+                    previous_blank_location = blankLocation
                     blankLocation -= 1
-                    moveToGetHere = Move.Left
                     Return True
                 Else
                     Return False
                 End If
             Case Move.Up
                 If blankLocation >= 3 Then
+                    previous_blank_location = blankLocation
                     blankLocation -= 3
-                    moveToGetHere = Move.Up
                     Return True
                 Else
                     Return False
@@ -48,16 +49,16 @@
             Case Move.Right
                 Dim temp As Integer = blankLocation Mod 3
                 If temp <> 2 Then
+                    previous_blank_location = blankLocation
                     blankLocation += 1
-                    moveToGetHere = Move.Right
                     Return True
                 Else
                     Return False
                 End If
             Case Move.Down
                 If blankLocation < 6 Then
+                    previous_blank_location = blankLocation
                     blankLocation += 3
-                    moveToGetHere = Move.Down
                     Return True
                 Else
                     Return False
@@ -68,31 +69,62 @@
     End Function
 
     Public Function CanMove(move As Move) As Boolean
-        If moveToGetHere = Move.None Then
-            Return True
-        End If
+
         Select Case move
             Case Move.Left
-                If moveToGetHere = Move.Right Then
+                Dim temp As Integer = blankLocation Mod 3
+                If temp <> 0 And () Then
+                    Return True
+                Else
                     Return False
                 End If
-                Return True
             Case Move.Up
-                If moveToGetHere = Move.Down Then
+                If blankLocation >= 3 Then
+                    Return True
+                Else
                     Return False
                 End If
-                Return True
             Case Move.Right
-                If moveToGetHere = Move.Left Then
+                Dim temp As Integer = blankLocation Mod 3
+                If temp <> 2 Then
+                    Return True
+                Else
                     Return False
                 End If
-                Return True
             Case Move.Down
-                If moveToGetHere = Move.Up Then
+                If blankLocation < 6 Then
+                    Return True
+                Else
                     Return False
                 End If
-                Return True
         End Select
+
+        'If moveToGetHere = Move.None Then
+        '    Return True
+        'End If
+        'Select Case move
+        '    Case Move.Left
+        '        If moveToGetHere = Move.Right Then
+        '            Return False
+        '        End If
+        '        Return True
+        '    Case Move.Up
+        '        If moveToGetHere = Move.Down Then
+        '            Return False
+        '        End If
+        '        Return True
+        '    Case Move.Right
+        '        If moveToGetHere = Move.Left Then
+        '            Return False
+        '        End If
+        '        Return True
+        '    Case Move.Down
+        '        If moveToGetHere = Move.Up Then
+        '            Return False
+        '        End If
+        '        Return True
+        'End Select
+
         Return False 'Should not get here
     End Function
 
